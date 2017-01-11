@@ -21,8 +21,9 @@ alias path='printf "%b\n" "${PATH//:/\\n}"'
 alias q="exit"
 alias rm="rm -rf --"
 alias t="tmux"
-alias th="bin/phpunit -c app/ src/Htg/Backend/GoogleLocationBundle/ && bin/phpunit -c app/ src/Htg/Backend/HometreeBuilderBundle/"
-alias cc="rm -rf app/cache/* && app/console cache:warmup -e dev"
+alias ht="bin/phpunit -c app/ src/Htg/Backend/GoogleLocationBundle/ && bin/phpunit -c app/ src/Htg/Backend/HometreeBuilderBundle/"
+alias hf="npm install; npm run-script compile; app/console assets:install --symlink --relative"
+alias hc="rm -rf app/cache/* && app/console cache:warmup -e dev"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Load OS specific aliases.
