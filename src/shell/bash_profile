@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PATH=~/.composer/vendor/bin:$PATH
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 source_bash_files() {
@@ -55,6 +57,11 @@ unset -f source_bash_files
 # Clear system messages (system copyright notice, the date
 # and time of the last login, the message of the day, etc.).
 
-cd /srv/backoffice
+eval "$(symfony-autocomplete)"
+
+
+# nohup ssh nfq@backoffice.hometogo.rocks -L 9400:logs.hometogo.rocks:9200 -N &
 
 clear
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

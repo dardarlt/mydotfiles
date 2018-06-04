@@ -2,3 +2,6 @@
 
 [ -n "$PS1" ] \
     && . ~/.bash_profile
+export LC_CTYPE=en_US.UTF-8
+export PATH="/srv/hometogo_www/node_modules/.bin:$PATH"
+cd /srv/hometogo_www

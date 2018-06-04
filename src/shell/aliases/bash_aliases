@@ -1,5 +1,6 @@
 #!/bin/bash
 
+alias aliases="cat ~/.bash_aliases"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -20,10 +21,15 @@ alias n="npm"
 alias path='printf "%b\n" "${PATH//:/\\n}"'
 alias q="exit"
 alias rm="rm -rf --"
-alias t="tmux"
-alias ht="bin/phpunit -c app/ src/Htg/Backend/GoogleLocationBundle/ && bin/phpunit -c app/ src/Htg/Backend/HometreeBuilderBundle/"
+alias t="bin/phpunit -c app/ --stop-on-failure -v"
+alias hto="rm -rf app/cache/test/* && bin/phpunit -c app/ src/Htg/Backend/GoogleLocationBundle/ && bin/phpunit -c app/ src/Htg/Backend/HometreeBuilderBundle/ && bin/phpunit -c app/ src/Vrt && bin/phpunit -c app/ src/Htg/HometreeForceBundle/"
+alias ht="rm -rf app/cache/test/* && bin/phpunit -c app/ --stop-on-failure"
 alias hf="npm install; npm run-script compile; app/console assets:install --symlink --relative"
 alias hc="rm -rf app/cache/* && app/console cache:warmup -e dev"
+alias hcp="rm -rf app/cache/* && app/console cache:warmup -e prod"
+alias hi="cd /srv/import"
+alias hb="cd /srv/backoffice"
+alias dao="hb && composer dump-autoload -o"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Load OS specific aliases.
